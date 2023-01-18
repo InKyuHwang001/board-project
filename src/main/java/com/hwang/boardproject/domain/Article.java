@@ -35,7 +35,7 @@ public class Article extends AuditingFields {
     @Setter @Column(unique = false) private String title; // 제목
     @Setter @Column(unique = false, length = 10000) private String content; // 내용
 
-    @Setter private String hashTag;
+    @Setter private String hashtag;
 
     @ToString.Exclude
     @OrderBy("id")
@@ -47,14 +47,14 @@ public class Article extends AuditingFields {
 
     }
 
-    private Article(String title, String content, String hashTag) {
+    private Article(String title, String content, String hashtag) {
         this.title = title;
         this.content = content;
-        this.hashTag = hashTag;
+        this.hashtag = hashtag;
     }
 
-    public static Article of(String title, String content, String hashTag) {
-        return new Article(title, content, hashTag);
+    public static Article of(String title, String content, String hashtag) {
+        return new Article(title, content, hashtag);
     }
 
     @Override

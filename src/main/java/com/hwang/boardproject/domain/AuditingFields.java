@@ -22,20 +22,20 @@ public class AuditingFields {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @CreatedDate
-    @Column(unique = false, updatable = false)
-    private LocalDateTime createdAt;
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt; // 생성일시
 
     @CreatedBy
-    @Column(unique = false, length = 100, updatable = false)
-    private String createdBy;
+    @Column(nullable = false, updatable = false, length = 100)
+    private String createdBy; // 생성자
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @LastModifiedDate
-    @Column(unique = false)
-    private LocalDateTime updatedAt;
+    @Column(nullable = false)
+    private LocalDateTime modifiedAt; // 수정일시
 
     @LastModifiedBy
-    @Column(unique = false, length = 100)
-    private String updatedBy;
+    @Column(nullable = false, length = 100)
+    private String modifiedBy; // 수정자
 
 }
